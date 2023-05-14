@@ -1,14 +1,27 @@
 name: SweetyGames-MultiBrain
 author: SlowFeew
 version: 1.0
-main: com.slowfeew.multiBrain.Main
+main: fun.slowfeew.multibrain.Main
+depend:
+  - ProtocolLib
+  - Vault
+  - LuckPerms
+  - SweetySystem
 commands:
   setspawn:
+    permission: op
     description: Set the spawn point for the game
-    usage: /setspawn
   forcestart:
+    permission: GameMaster
     description: Force start the game
-    usage: /forcestart
-  mb:
+  multibrain:
+    aliases:
+      - mb
+    permission: op
     description: MultiBrain command
-    usage: /mb
+  test:
+    permission: op
+    description: Test command
+  debug:
+    permission: op
+    description: Debug command

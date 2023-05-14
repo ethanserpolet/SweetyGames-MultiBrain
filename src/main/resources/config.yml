@@ -1,40 +1,154 @@
+Spawn:
+  world: world
+  x: 0
+  y: 0
+  z: 0
+  yaw: 0
+  pitch: 0
+
 Teams:
   Base:
     Red:
-      Spawn: [0, 0, 0];
-      Color: RED;
-      Bed: [0, 0, 0];
-      Obsidian: [0, 0, 0];
+      Spawn:
+        world: world
+        x: 0
+        y: 0
+        z: 0
+        yaw: 0
+        pitch: 0
+        Color: RED
+      Bed:
+        world: world
+        x: 0
+        y: 0
+        z: 0
+        yaw: 0
+        pitch: 0
+      Obsidian1:
+        world: world
+        x: 7
+        y: 26
+        z: 6
+        yaw: 0
+        pitch: 0
+      Obsidian2:
+        world: world
+        x: 7
+        y: 10
+        z: -6
+        yaw: 0
+        pitch: 0
     Blue:
-      Spawn: [0, 0, 0];
-      Color: BLUE;
-      Bed: [0, 0, 0];
-      Obsidian: [0, 0, 0];
+      Spawn:
+        world: world
+        x: 0
+        y: 0
+        z: 0
+        yaw: 0
+        pitch: 0
+      Color: BLUE
+      Bed:
+        world: world
+        x: 0
+        y: 0
+        z: 0
+        yaw: 0
+        pitch: 0
+      Obsidian1:
+        world: world
+        x: 7
+        y: 26
+        z: -6
+        yaw: 0
+        pitch: 0
+      Obsidian2:
+        world: world
+        x: 7
+        y: 10
+        z: 6
+        yaw: 0
+        pitch: 0
     Green:
-      Spawn: [0, 0, 0];
-      Color: GREEN;
-      Bed: [0, 0, 0];
-      Obsidian: [0, 0, 0];
+      Spawn:
+        world: world
+        x: 6
+        y: 26
+        z: -7
+        yaw: 0
+        pitch: 0
+      Color: GREEN
+      Bed:
+        world: world
+        x: 0
+        y: 0
+        z: 0
+        yaw: 0
+        pitch: 0
+      Obsidian1:
+        world: world
+        x: 6
+        y: 26
+        z: -7
+        yaw: 0
+        pitch: 0
+      Obsidian2:
+        world: world
+        x: -6
+        y: 10
+        z: -7
+        yaw: 0
+        pitch: 0
     Yellow:
-      Spawn: [0, 0, 0];
-      Color: YELLOW;
-      Bed: [0, 0, 0];
-      Obsidian: [0, 0, 0];
+      Spawn:
+        world: world
+        x: 0
+        y: 0
+        z: 0
+        yaw: 0
+        pitch: 0
+      Color: YELLOW
+      Bed:
+        world: world
+        x: 0
+        y: 0
+        z: 0
+        yaw: 0
+        pitch: 0
+      Obsidian1:
+        world: world
+        x: 6
+        y: 26
+        z: 7
+        yaw: 0
+        pitch: 0
+      Obsidian2:
+        world: world
+        x: -6
+        y: 10
+        z: 7
+        yaw: 0
+        pitch: 0
 
-HubSpawn: [0, 0, 0];
-JoinMessage: '&dMultiBrain §8| §8[§a+§8] §7%prefix%%player% §7à rejoint la partie ! §8(§a%online%§8/§c%max%§8)';
-LeaveMessage: '&dMultiBrain §8| §8[§c-§8] §7%prefix%%player% §7a quitté la partie ! §8(§a%online%§8/§c%max%§8)';
-WaitTime: 30;
+
+MaxYCords:
+  InSpawn: 0
+  InGame: 0
+  InSpec: 0
+JoinMessage: "&dMultiBrain §8| §8[§a+§8] §7%prefix%%player% §7à rejoint la partie ! §8(§a%online%§8/§c%max%§8)"
+LeaveMessage: "&dMultiBrain §8| §8[§c-§8] §7%prefix%%player% §7a quitté la partie ! §8(§a%online%§8/§c%max%§8)"
+WaitTime: 30
 WaitingMessage:
-  Title: '&dMultiBrain';
-    SubTitle: '&7Veuillez patienter...';
-  ActionBar: '&cIl n'y a pas assez de joueurs pour lancer la partie !';
-LaunchingTime: 10;
+  Title: "&dMultiBrain"
+  SubTitle: "&7Veuillez patienter..."
+  ActionBar: "&cIl n'y a pas assez de joueurs pour lancer la partie !"
+
+LaunchingTime: 10
+
 LaunchingTimeMessage:
-  Title: '&dMultiBrain';
-    SubTitle: '&eLa partie commence dans %time% secondes !';
-  ActionBar: '&eLa partie commence dans %time% secondes !';
+  Title: "&dMultiBrain"
+  SubTitle: "&eLa partie commence dans %time% secondes !"
+  ActionBar: "&eLa partie commence dans %time% secondes !"
 LaunchingMessage:
-  Title: '&dMultiBrain';
-    SubTitle: '&aLa partie commence !';
-  ActionBar: '&7La partie commence !';
+  Title: "&dMultiBrain"
+  SubTitle: "&aLa partie commence !"
+  ActionBar: "&7La partie commence !"
