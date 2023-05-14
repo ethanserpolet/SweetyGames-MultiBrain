@@ -1,0 +1,14 @@
+name: SweetyGames-MultiBrain
+author: SlowFeew
+version: 1.0
+main: com.slowfeew.multiBrain.Main
+commands:
+  setspawn:
+    description: Set the spawn point for the game
+    usage: /setspawn
+  forcestart:
+    description: Force start the game
+    usage: /forcestart
+  mb:
+    description: MultiBrain command
+    usage: /mb

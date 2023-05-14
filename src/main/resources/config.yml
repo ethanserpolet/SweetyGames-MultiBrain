@@ -1,0 +1,40 @@
+Teams:
+  Base:
+    Red:
+      Spawn: [0, 0, 0];
+      Color: RED;
+      Bed: [0, 0, 0];
+      Obsidian: [0, 0, 0];
+    Blue:
+      Spawn: [0, 0, 0];
+      Color: BLUE;
+      Bed: [0, 0, 0];
+      Obsidian: [0, 0, 0];
+    Green:
+      Spawn: [0, 0, 0];
+      Color: GREEN;
+      Bed: [0, 0, 0];
+      Obsidian: [0, 0, 0];
+    Yellow:
+      Spawn: [0, 0, 0];
+      Color: YELLOW;
+      Bed: [0, 0, 0];
+      Obsidian: [0, 0, 0];
+
+HubSpawn: [0, 0, 0];
+JoinMessage: '&dMultiBrain §8| §8[§a+§8] §7%prefix%%player% §7à rejoint la partie ! §8(§a%online%§8/§c%max%§8)';
+LeaveMessage: '&dMultiBrain §8| §8[§c-§8] §7%prefix%%player% §7a quitté la partie ! §8(§a%online%§8/§c%max%§8)';
+WaitTime: 30;
+WaitingMessage:
+  Title: '&dMultiBrain';
+    SubTitle: '&7Veuillez patienter...';
+  ActionBar: '&cIl n'y a pas assez de joueurs pour lancer la partie !';
+LaunchingTime: 10;
+LaunchingTimeMessage:
+  Title: '&dMultiBrain';
+    SubTitle: '&eLa partie commence dans %time% secondes !';
+  ActionBar: '&eLa partie commence dans %time% secondes !';
+LaunchingMessage:
+  Title: '&dMultiBrain';
+    SubTitle: '&aLa partie commence !';
+  ActionBar: '&7La partie commence !';
