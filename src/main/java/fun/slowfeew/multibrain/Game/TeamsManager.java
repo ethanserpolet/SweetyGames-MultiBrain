@@ -15,6 +15,15 @@ public class TeamsManager {
         return playerTeams.get(player);
     }
 
+    public static Teams getTeamByName(String name) {
+        for (Teams team : Teams.values()) {
+            if (team.getNom().equals(name)) {
+                return team;
+            }
+        }
+        return null; // Si aucune équipe ne correspond au nom spécifié
+    }
+
     public void setTeams(Player player, Teams Teams) {
         playerTeams.put(player, Teams);
     }

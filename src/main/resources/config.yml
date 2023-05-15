@@ -129,7 +129,7 @@ Teams:
         yaw: 0
         pitch: 0
 
-
+Ranked: false
 MaxYCords:
   InSpawn: 0
   InGame: 0

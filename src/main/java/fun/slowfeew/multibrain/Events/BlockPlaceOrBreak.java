@@ -1,5 +1,6 @@
 package fun.slowfeew.multibrain.Events;
 
+import fun.slowfeew.multibrain.Game.PlayerStatus;
 import fun.slowfeew.multibrain.Main;
 import fun.slowfeew.multibrain.commands.CommandDebug;
 import org.bukkit.Location;
@@ -22,6 +23,17 @@ public class BlockPlaceOrBreak implements Listener {
 
         Player p = e.getPlayer();
 
+
+        if(main.getStatusManager().getStatus(p) != PlayerStatus.INGAME) {
+            e.setCancelled(true);
+            return;
+        }
+
+        if(e.getBlockPlaced().getType().toString().contains("SMOOTH_SANDSTONE")) {
+            e.setCancelled(true);
+            return;
+        }
+
         if(CommandDebug.debug.containsKey(p)) {
                 Location placed = e.getBlockPlaced().getLocation();
                 p.sendMessage("§dMultiBrain §8| §cVous avez placé un bloc ! §8(§7" + placed.toString() + "§8)");
@@ -33,6 +45,16 @@ public class BlockPlaceOrBreak implements Listener {
     public void onBreak(BlockBreakEvent e) {
 
         Player p = e.getPlayer();
+
+        if(main.getStatusManager().getStatus(p) != PlayerStatus.INGAME) {
+            e.setCancelled(true);
+            return;
+        }
+
+        if(e.getBlock().getType().toString().contains("SMOOTH_SANDSTONE")) {
+            e.setCancelled(true);
+            return;
+        }
 
         if(CommandDebug.debug.containsKey(p)) {
             Location placed = e.getBlock().getLocation();

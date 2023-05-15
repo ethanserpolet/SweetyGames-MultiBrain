@@ -1,7 +1,7 @@
 package fun.slowfeew.multibrain.commands;
 
 import fun.slowfeew.multibrain.Main;
-import fun.slowfeew.multibrain.WorldManager.RemovePlayer;
+import fun.slowfeew.multibrain.WorldManager.PlaceObsidian;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,7 +25,7 @@ public class CommandTest implements CommandExecutor {
 
             if(strings[0].equalsIgnoreCase("outRed")) {
                 commandSender.sendMessage("§cTEST: " + strings[0]);
-                RemovePlayer.out("Red");
+                PlaceObsidian.out("Red");
                 return true;
             }
 
