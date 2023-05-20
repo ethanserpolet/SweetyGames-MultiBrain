@@ -23,11 +23,6 @@ public class CommandTest implements CommandExecutor {
                 return true;
             }
 
-            if(strings[0].equalsIgnoreCase("outRed")) {
-                commandSender.sendMessage("§cTEST: " + strings[0]);
-                PlaceObsidian.out("Red");
-                return true;
-            }
 
 
         }

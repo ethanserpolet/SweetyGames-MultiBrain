@@ -1,8 +1,8 @@
 package fun.slowfeew.multibrain.Game;
 
+import fun.slowfeew.multibrain.Game.Enum.PlayerStatus;
 import fun.slowfeew.multibrain.Main;
 import org.bukkit.GameMode;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -17,7 +17,7 @@ public class Spectate {
         if (it == null || player.getGameMode().equals(GameMode.CREATIVE))
             return;
 
-        PlayerStatus status = Main.getInstance.getStatusManager().getStatus(player);
+        PlayerStatus status = PlayerStatus.getStatus(player.getUniqueId());
 
         if (status != PlayerStatus.INGAME) {
             e.setCancelled(true);

@@ -1,29 +1,58 @@
 Spawn:
   world: world
+  x: 1000
+  y: 100
+  z: 1000
+  yaw: 0
+  pitch: 0
+SetSandStone1:
+  world: world
   x: 0
-  y: 0
+  y: 15
+  z: 19
+  yaw: 0
+  pitch: 0
+SetSandStone11:
+  world: world
+  x: 0
+  y: 10
+  z: -19
+  yaw: 0
+  pitch: 0
+SetSandStone2:
+  world: world
+  x: 19
+  y: 15
+  z: 19
+  yaw: 0
+  pitch: 0
+SetSandStone22:
+  world: world
+  x: -19
+  y: 10
   z: 0
   yaw: 0
   pitch: 0
+
 
 Teams:
   Base:
     Red:
       Spawn:
         world: world
-        x: 0
-        y: 0
-        z: 0
-        yaw: 0
-        pitch: 0
+        x: 20.696363042341545
+        y: 21.0
+        z: 0.5379250176121053
+        yaw: -270.16953
+        pitch: 5.482346
         Color: RED
       Bed:
         world: world
-        x: 0
-        y: 0
-        z: 0
-        yaw: 0
-        pitch: 0
+        x: 20.45360663418866
+        y: 16.5625
+        z: 0.4438558279936774
+        yaw: 89.57187
+        pitch: 90.0
       Obsidian1:
         world: world
         x: 7
@@ -41,19 +70,19 @@ Teams:
     Blue:
       Spawn:
         world: world
-        x: 0
-        y: 0
-        z: 0
-        yaw: 0
-        pitch: 0
+        x: -19.69844065984944
+        y: 21.0
+        z: 0.6517842458158474
+        yaw: -90.2425
+        pitch: 3.9254656
       Color: BLUE
       Bed:
         world: world
-        x: 0
-        y: 0
-        z: 0
-        yaw: 0
-        pitch: 0
+        x: -19.46210249158429
+        y: 16.5625
+        z: 0.5476105189978197
+        yaw: 90.79601
+        pitch: 90.0
       Obsidian1:
         world: world
         x: 7
@@ -71,19 +100,19 @@ Teams:
     Green:
       Spawn:
         world: world
-        x: 6
-        y: 26
-        z: -7
-        yaw: 0
-        pitch: 0
+        x: 0.3708390416251257
+        y: 21.0
+        z: -19.67367664572963
+        yaw: -0.10627436
+        pitch: 1.5552058
       Color: GREEN
       Bed:
         world: world
-        x: 0
-        y: 0
-        z: 0
-        yaw: 0
-        pitch: 0
+        x: 0.5187458502958381
+        y: 16.5625
+        z: -19.575304233160146
+        yaw: 180.01418
+        pitch: 90.0
       Obsidian1:
         world: world
         x: 6
@@ -101,19 +130,19 @@ Teams:
     Yellow:
       Spawn:
         world: world
-        x: 0
-        y: 0
-        z: 0
-        yaw: 0
-        pitch: 0
+        x: 0.6010631512026022
+        y: 21.0
+        z: 20.59168707620611
+        yaw: -180.26657
+        pitch: 7.4423285
       Color: YELLOW
       Bed:
         world: world
-        x: 0
-        y: 0
-        z: 0
-        yaw: 0
-        pitch: 0
+        x: 0.4967846669168885
+        y: 16.5625
+        z: 20.470411972665655
+        yaw: 179.78584
+        pitch: 90.0
       Obsidian1:
         world: world
         x: 6
@@ -128,12 +157,14 @@ Teams:
         z: 7
         yaw: 0
         pitch: 0
-
 Ranked: false
 MaxYCords:
   InSpawn: 0
   InGame: 0
   InSpec: 0
+MinYCords:
+  InSpawn: 0
+  InGame: 0
 JoinMessage: "&dMultiBrain §8| §8[§a+§8] §7%prefix%%player% §7à rejoint la partie ! §8(§a%online%§8/§c%max%§8)"
 LeaveMessage: "&dMultiBrain §8| §8[§c-§8] §7%prefix%%player% §7a quitté la partie ! §8(§a%online%§8/§c%max%§8)"
 WaitTime: 30
@@ -143,6 +174,7 @@ WaitingMessage:
   ActionBar: "&cIl n'y a pas assez de joueurs pour lancer la partie !"
 
 LaunchingTime: 10
+Mode: Solo
 
 LaunchingTimeMessage:
   Title: "&dMultiBrain"

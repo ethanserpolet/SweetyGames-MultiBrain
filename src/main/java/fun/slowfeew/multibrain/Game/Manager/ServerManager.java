@@ -1,6 +1,6 @@
-package fun.slowfeew.multibrain.Game;
+package fun.slowfeew.multibrain.Game.Manager;
 
-import fun.slowfeew.multibrain.Game.ServerStatus;
+import fun.slowfeew.multibrain.Game.Enum.ServerStatus;
 
 public class ServerManager {
 

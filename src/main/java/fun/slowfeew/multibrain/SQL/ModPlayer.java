@@ -1,6 +1,6 @@
 package fun.slowfeew.multibrain.SQL;
 
-import fun.slowfeew.multibrain.Utils.DatabaseManager;
+import fun.slowfeew.multibrain.SQL.config.DatabaseManager;
 import org.bukkit.entity.Player;
 
 import java.sql.Connection;
@@ -14,7 +14,7 @@ public class ModPlayer {
     public static boolean getModPlayer(Player p) {
 
         try {
-            Connection connection = DatabaseManager.getOsaka2Connection();
+            Connection connection = DatabaseManager.Osaka2.getDatabaseAccess().getConnection();
 
             PreparedStatement ps = connection.prepareStatement("SELECT `ENABLED` FROM `Mod` WHERE `Player` = ?");
             ps.setString(1, p.getName());
@@ -35,8 +35,8 @@ public class ModPlayer {
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("TON CHECK PUE LA MERDE");
+            return false;
         }
-        return false;
     }
     //setModPlayer
 

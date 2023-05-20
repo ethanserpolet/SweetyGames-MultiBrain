@@ -1,6 +1,6 @@
 package fun.slowfeew.multibrain.SQL;
 
-import fun.slowfeew.multibrain.Utils.DatabaseManager;
+import fun.slowfeew.multibrain.SQL.config.DatabaseManager;
 import org.bukkit.entity.Player;
 
 import java.sql.Connection;
@@ -13,7 +13,8 @@ public class AccountPlayer {
 
     public static boolean hasAccountName(String target, Player sender) {
         try {
-            Connection connection = DatabaseManager.getOsaka2Connection();
+            Connection connection = DatabaseManager.Osaka2.getDatabaseAccess().getConnection();
+            
 
             PreparedStatement ps = connection.prepareStatement("SELECT `Player` FROM `General` WHERE `Player` = '" + target + "'");
             ResultSet rs = ps.executeQuery();
@@ -38,7 +39,7 @@ public class AccountPlayer {
 
     public static boolean hasAccount(UUID uuid) {
         try {
-            Connection connection = DatabaseManager.getOsaka2Connection();
+            Connection connection = DatabaseManager.Osaka2.getDatabaseAccess().getConnection();
 
             PreparedStatement ps = connection.prepareStatement("SELECT `Player` FROM `General` WHERE `UUID` = ?");
             ps.setString(1, uuid.toString());
