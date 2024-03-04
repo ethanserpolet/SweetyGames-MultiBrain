@@ -58,7 +58,7 @@ public class LobbyRunnable extends BukkitRunnable {
                 //send title
 
                 for(Player p : Bukkit.getOnlinePlayers()) {
-                    p.sendTitle("", "§fLa partie commence dans §b" + secondsleft + " §aseconde(s)");
+                    p.sendTitle("", "§fLa partie commence dans §b" + secondsleft + " §fseconde(s)");
                     p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BASS, 10, 1);
                 }
             }

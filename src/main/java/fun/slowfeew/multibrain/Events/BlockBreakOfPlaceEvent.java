@@ -38,7 +38,7 @@ public class BlockBreakOfPlaceEvent implements Listener {
             return;
         }
 
-        if(e.getBlockPlaced().getLocation().getBlockY() >= 20 || e.getBlockPlaced().getLocation().getBlockY() <= 9) {
+        if(e.getBlockPlaced().getLocation().getBlockY() >= 70 || e.getBlockPlaced().getLocation().getBlockY() <= 59) {
             e.setCancelled(true);
             e.getPlayer().sendMessage("§6[MultiBrain] §cVous ne pouvez pas placer de blocs à cette hauteur !");
             return;

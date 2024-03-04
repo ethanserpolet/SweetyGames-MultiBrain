@@ -39,7 +39,7 @@ public class PlayerJoinEvent implements Listener {
 
     @EventHandler
     public void onLog(PlayerLoginEvent e) {
-        if(FunAPI.getIfPlayerIsMod(e.getPlayer().getName())) {
+        if(FunAPI.getIfPlayerIsMod(e.getPlayer().getUniqueId().toString())) {
             Main.IS_MOD.add(e.getPlayer());
         }
         if (ServerStatus.getStatus().equals(ServerStatus.WAITING)) {
@@ -90,19 +90,19 @@ public class PlayerJoinEvent implements Listener {
             switch (serverStatus) {
 
                 case STARTING:
-                    p.kickPlayer("§cLa partie est en cours de démarrage, veuillez patienter.");
+                    p.kickPlayer("§6[MultiBrain] §cLa partie est en cours de démarrage, veuillez patienter.");
                     break;
 
                 case IN_GAME:
                     if (!Main.IS_MOD.contains(e.getPlayer()) || TeamsManager.getTeam(p.getUniqueId()) == null) {
-                        p.kickPlayer("§cLa partie est en cours, veuillez patienter.");
+                        p.kickPlayer("§6[MultiBrain] §cLa partie est en cours, veuillez patienter.");
                         return;
                     }
 
                     if (TeamsManager.getTeam(p.getUniqueId()) != null && PlayerLeaveEvent.playerLeft.contains(p.getUniqueId())) {
 
                         p.sendMessage("§d ");
-                        p.sendMessage("§6[MultiBrain] §fVous avez été réintégré dans la partie.");
+                        p.sendMessage("§6[MultiBrain] §aVous avez été réintégré dans la partie.");
                         p.sendMessage("§e ");
 
                         PlayerManager.doRespawn(p);
@@ -137,9 +137,9 @@ public class PlayerJoinEvent implements Listener {
         player.setMaxHealth(20);
         player.setHealth(player.getMaxHealth());
 
-        //player.getInventory().setItem(0, (new ItemBuilder(Material.STAINED_CLAY, 1)).setInfinityDurability().setDisplayName("§eChoisir une équipe §8(§7Clic-droit§8)").flag(ItemFlag.HIDE_UNBREAKABLE).flag(ItemFlag.HIDE_ATTRIBUTES).build());
+        player.getInventory().setItem(0, (new ItemBuilder(Material.STAINED_CLAY, 1)).setInfinityDurability().setDisplayName("§eChoisir une équipe §8(§7Clic-droit§8)").flag(ItemFlag.HIDE_UNBREAKABLE).flag(ItemFlag.HIDE_ATTRIBUTES).build());
 
-        //player.getInventory().setItem(7, (new ItemBuilder(Material.REDSTONE_COMPARATOR, 1)).setInfinityDurability().setDisplayName("§dParamètres §8(§7Clic-droit§8)").flag(ItemFlag.HIDE_UNBREAKABLE).flag(ItemFlag.HIDE_ATTRIBUTES).build());
+        player.getInventory().setItem(7, (new ItemBuilder(Material.REDSTONE_COMPARATOR, 1)).setInfinityDurability().setDisplayName("§dParamètres §8(§7Clic-droit§8)").flag(ItemFlag.HIDE_UNBREAKABLE).flag(ItemFlag.HIDE_ATTRIBUTES).build());
         player.getInventory().setItem(8, (new ItemBuilder(Material.BED, 1)).setInfinityDurability().setDisplayName("§cQuitter §8(§7Clic-droit§8)")
                 .flag(ItemFlag.HIDE_UNBREAKABLE).flag(ItemFlag.HIDE_ATTRIBUTES).build());
 

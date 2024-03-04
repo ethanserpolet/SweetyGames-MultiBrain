@@ -22,11 +22,15 @@ public class EndingRound {
 
         // Vérifiez si une équipe a atteint 0 points
         if (TeamsManager.points.get(loser) == 0) {
+
             System.out.println("L'équipe " + loser + " a atteint 0 point(s) !");
             EliminateTeam.eliminateTeam(loser);
+
             announceWinnerEliminated(winner, loser);
+
             ResetPlacedBlocks.ResetMap();
             ResetBrokenBlocks.ResetMap();
+
             StartRound.round++;
 
             for (Player p : Bukkit.getOnlinePlayers()) {

@@ -51,8 +51,8 @@ public class PlayerLeaveEvent implements Listener {
                 if(TeamsManager.getTeam(p.getUniqueId()) != null) {
 
                     Bukkit.broadcastMessage("§c ");
-                    Bukkit.broadcastMessage("§6[MultiBrain] §cLe joueur " + TeamsManager.getTeam(p.getUniqueId()).getPrefix() + " " + p.getName() + " §7c quitté la partie.");
-                    Bukkit.broadcastMessage("§8(§7Il a 35 secondes pour rejoindre à nouveau la partie. Au delà de ce délai, il sera éliminé.§8)");
+                    Bukkit.broadcastMessage("§6[MultiBrain] §fLe joueur " + TeamsManager.getTeam(p.getUniqueId()).getPrefix() + " " + p.getName() + " §fc quitté la partie.");
+                    Bukkit.broadcastMessage("§8(§cIl a 35 secondes pour rejoindre à nouveau la partie. Au delà de ce délai, il sera éliminé.§8)");
                     Bukkit.broadcastMessage("§c ");
                     playerLeft.add(p.getUniqueId());
 
@@ -60,7 +60,7 @@ public class PlayerLeaveEvent implements Listener {
 
                         if(!Bukkit.getPlayer(p.getUniqueId()).isOnline() || Bukkit.getPlayer(p.getUniqueId()) == null) {
                             Bukkit.broadcastMessage("§c ");
-                            Bukkit.broadcastMessage("§6[MultiBrain] §cLe joueur " + TeamsManager.getTeam(p.getUniqueId()).getPrefix() + " " + p.getName() + " §ca été éliminé.");
+                            Bukkit.broadcastMessage("§6[MultiBrain] §fLe joueur " + TeamsManager.getTeam(p.getUniqueId()).getPrefix() + " " + p.getName() + " §fa été éliminé.");
                             Bukkit.broadcastMessage("§c ");
                             playerLeft.remove(p.getUniqueId());
                         }

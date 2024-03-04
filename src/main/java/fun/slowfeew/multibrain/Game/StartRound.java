@@ -7,6 +7,7 @@ import fun.slowfeew.multibrain.Game.Manager.ItemsManager;
 import fun.slowfeew.multibrain.Game.Manager.TeamsManager;
 import fun.slowfeew.multibrain.Main;
 import fun.slowfeew.multibrain.WorldManager.Config;
+import fun.slowfeew.proxy.FunAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -60,7 +61,7 @@ public class StartRound {
 
 
                     if (round == 0) {
-                        p.sendTitle("", "§7Lancement de la partie");
+                        p.sendTitle("", "§bLancement de la partie");
                         p.playSound(p.getLocation(), Sound.BLOCK_NOTE_HAT, 10, 1);
                     }
 
@@ -73,7 +74,7 @@ public class StartRound {
                             int i = Duration.get(p);
 
                             if (i  >= 1) {
-                                p.sendTitle("", "§d" + Duration.get(p) + "sec");
+                                p.sendTitle("", "§6" + Duration.get(p) + "sec");
                                 p.teleport(loc);
                                 Integer i1 = Duration.get(p);
                                 Duration.put(p, i1 - 1);
