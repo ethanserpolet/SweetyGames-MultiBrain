@@ -42,7 +42,7 @@ public class PlayerInteractEvent implements Listener {
                 if(itemMeta.getDisplayName().equals("§cQuitter §8(§7Clic-droit§8)")) {
                     ByteArrayDataOutput byteArrayDataOutput = ByteStreams.newDataOutput();
                     byteArrayDataOutput.writeUTF("Connect");
-                    byteArrayDataOutput.writeUTF("Lobby-01");
+                    byteArrayDataOutput.writeUTF("lobby_01");
                     player.sendPluginMessage(Main.getInstance, "BungeeCord", byteArrayDataOutput.toByteArray());
                 }
 

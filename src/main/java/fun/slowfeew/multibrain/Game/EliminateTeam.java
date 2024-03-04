@@ -32,10 +32,10 @@ public class EliminateTeam {
                         .flag(ItemFlag.HIDE_UNBREAKABLE).flag(ItemFlag.HIDE_ATTRIBUTES).build());
 
                 player.sendMessage("§7 ");
-                player.sendMessage("§dMultiBrain §8| §cVous avez été éliminé !");
-                player.sendMessage("§7Vous pouvez maintenant regarder les autres joueurs jouer !");
+                player.sendMessage("§6[MultiBrain] §f §cVous avez été éliminé !");
+                player.sendMessage("§fVous pouvez maintenant regarder les autres joueurs jouer !");
                 player.sendMessage("§7 ");
-                player.sendMessage("§7Vos statistiques ont été sauvegardées, vous pouvez les consulter sur le site : §dhttps://frenchycraft.fr");
+                player.sendMessage("§fVos §bstatistiques §font été §asauvegardées§f, vous pouvez les consulter sur le §bsite§f: §6https://funkraft.gg");
                 player.sendMessage("§7 ");
                 player.sendTitle("§cVous avez été éliminé !", "§7Vous êtes désormais spectateur !");
 
@@ -46,7 +46,7 @@ public class EliminateTeam {
 
         PlaceObsidian.out(team);
 
-        Bukkit.broadcastMessage("§dMultiBrain §8| §7L'équipe " + team.getPrefix() + " §7a été éliminée !");
+        Bukkit.broadcastMessage("§6[MultiBrain] §fL'équipe " + team.getPrefix() + " §fa été éliminée !");
 
     }
 }

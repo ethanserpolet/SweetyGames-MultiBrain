@@ -43,13 +43,13 @@ public class InventoryClickEvent implements Listener {
 
                     if (displayName.equals("§7Rejoindre l'équipe §cRouge")) {
                         if (TeamsManager.getSize(TeamsManager.RED) > 0) {
-                            player.sendMessage("§dMultiBrain §8| §cCette équipe est déjà pleine !");
+                            player.sendMessage("§6[MultiBrain] §cCette équipe est déjà pleine !");
                             return;
                         }
 
                         ItemStack redClay = LobbyTeamSelector.createColoredClay(DyeColor.RED, "§7Changer d'Equipe §8(§7Clic-droit§8)");
                         player.getInventory().setItem(0, redClay);
-                        player.sendMessage("§dMultiBrain §8| §7Vous avez rejoint l'équipe §crouge §7!");
+                        player.sendMessage("§6[MultiBrain] §7Vous avez rejoint l'équipe §crouge §7!");
                         TeamsManager.RED.setTeam(player.getUniqueId());
 
                         TeamsManager.BLUE.removePlayer(player.getUniqueId());
@@ -59,12 +59,12 @@ public class InventoryClickEvent implements Listener {
                         TeamsManager.RED.setTeam(player.getUniqueId());
                     } else if (displayName.equals("§7Rejoindre l'équipe §eJaune")) {
                         if (TeamsManager.YELLOW.getTeamSize() > 0) {
-                            player.sendMessage("§dMultiBrain §8| §cCette équipe est déjà pleine !");
+                            player.sendMessage("§6[MultiBrain] §cCette équipe est déjà pleine !");
                             return;
                         }
                         ItemStack yellowClay = LobbyTeamSelector.createColoredClay(DyeColor.YELLOW, "§7Changer d'Equipe §8(§7Clic-droit§8)");
                         player.getInventory().setItem(0, yellowClay);
-                        player.sendMessage("§dMultiBrain §8| §7Vous avez rejoint l'équipe §ejaune §7!");
+                        player.sendMessage("§6[MultiBrain] §7Vous avez rejoint l'équipe §ejaune §7!");
                         TeamsManager.YELLOW.setTeam(player.getUniqueId());
 
                         TeamsManager.BLUE.removePlayer(player.getUniqueId());
@@ -76,12 +76,12 @@ public class InventoryClickEvent implements Listener {
                         CommandDebug.debugSend(String.valueOf(TeamsManager.GREEN.getTeamSize()), " SIZE GREEN");
 
                         if (TeamsManager.GREEN.getTeamSize() > 0) {
-                            player.sendMessage("§dMultiBrain §8| §cCette équipe est déjà pleine !");
+                            player.sendMessage("§6[MultiBrain] §cCette équipe est déjà pleine !");
                             return;
                         }
                         ItemStack greenClay = LobbyTeamSelector.createColoredClay(DyeColor.GREEN, "§7Changer d'Equipe §8(§7Clic-droit§8)");
                         player.getInventory().setItem(0, greenClay);
-                        player.sendMessage("§dMultiBrain §8| §7Vous avez rejoint l'équipe §2verte §7!");
+                        player.sendMessage("§6[MultiBrain] §7Vous avez rejoint l'équipe §2verte §7!");
                         TeamsManager.GREEN.setTeam(player.getUniqueId());
 
                         TeamsManager.BLUE.removePlayer(player.getUniqueId());
@@ -93,13 +93,13 @@ public class InventoryClickEvent implements Listener {
                         CommandDebug.debugSend(String.valueOf(TeamsManager.BLUE.getTeamSize()), " SIZE BLUE");
 
                         if (TeamsManager.BLUE.getTeamSize() > 0) {
-                            player.sendMessage("§dMultiBrain §8| §cCette équipe est déjà pleine !");
+                            player.sendMessage("§6[MultiBrain] §cCette équipe est déjà pleine !");
                             return;
                         }
 
                         ItemStack blueClay = LobbyTeamSelector.createColoredClay(DyeColor.BLUE, "§7Changer d'Equipe §8(§7Clic-droit§8)");
                         player.getInventory().setItem(0, blueClay);
-                        player.sendMessage("§dMultiBrain §8| §7Vous avez rejoint l'équipe §9bleue §7!");
+                        player.sendMessage("§6[MultiBrain] §7Vous avez rejoint l'équipe §9bleue §7!");
 
                         TeamsManager.RED.removePlayer(player.getUniqueId());
                         TeamsManager.GREEN.removePlayer(player.getUniqueId());

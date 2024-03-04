@@ -29,13 +29,13 @@ public class CommandDebug implements CommandExecutor {
             if (command.getName().equalsIgnoreCase("debug")) {
                 if (debug.containsKey(p)) {
                     debug.remove((Player) p);
-                    p.sendMessage("§dMultiBrain §8| §cLe mode debug est désactivé !");
+                    p.sendMessage("§6[MultiBrain] §cLe mode debug est désactivé !");
                     debug.put((Player) p, true);
-                    p.sendMessage("§dMultiBrain §8| §cLe mode debug est activé !");
+                    p.sendMessage("§6[MultiBrain] §cLe mode debug est activé !");
 
                 } else {
                     debug.put((Player) p, true);
-                    p.sendMessage("§dMultiBrain §8| §cLe mode debug est activé !");
+                    p.sendMessage("§6[MultiBrain] §cLe mode debug est activé !");
                 }
             }
         }

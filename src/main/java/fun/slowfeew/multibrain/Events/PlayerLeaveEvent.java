@@ -3,16 +3,12 @@ package fun.slowfeew.multibrain.Events;
 import fun.slowfeew.multibrain.Game.Enum.ServerStatus;
 import fun.slowfeew.multibrain.Game.Manager.TeamsManager;
 import fun.slowfeew.multibrain.Main;
-import fun.slowfeew.multibrain.Utils.LuckPermsAPI;
-import it.unimi.dsi.fastutil.Hash;
 import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.potion.PotionEffectType;
 
 import java.util.*;
 
@@ -37,7 +33,7 @@ public class PlayerLeaveEvent implements Listener {
             e.setQuitMessage(config.getString("LeaveMessage")
                     .replace("&", "§")
                     .replace("%player%", p.getName())
-                    .replace("%prefix%", String.valueOf(Objects.requireNonNull(LuckPermsAPI.getPrefix(p))))
+                    .replace("%prefix%", String.valueOf(Objects.requireNonNull(Main.PLAYER_PREFIX.get(e.getPlayer()))))
                     .replace("%online%", String.valueOf(Bukkit.getServer().getOnlinePlayers().size() - 1))
                     .replace("%max%", Main.maxPlayer)
             );
@@ -55,7 +51,7 @@ public class PlayerLeaveEvent implements Listener {
                 if(TeamsManager.getTeam(p.getUniqueId()) != null) {
 
                     Bukkit.broadcastMessage("§c ");
-                    Bukkit.broadcastMessage("§dMultiBrain §8| §cLe joueur " + TeamsManager.getTeam(p.getUniqueId()).getPrefix() + " " + p.getName() + " §7c quitté la partie.");
+                    Bukkit.broadcastMessage("§6[MultiBrain] §cLe joueur " + TeamsManager.getTeam(p.getUniqueId()).getPrefix() + " " + p.getName() + " §7c quitté la partie.");
                     Bukkit.broadcastMessage("§8(§7Il a 35 secondes pour rejoindre à nouveau la partie. Au delà de ce délai, il sera éliminé.§8)");
                     Bukkit.broadcastMessage("§c ");
                     playerLeft.add(p.getUniqueId());
@@ -64,7 +60,7 @@ public class PlayerLeaveEvent implements Listener {
 
                         if(!Bukkit.getPlayer(p.getUniqueId()).isOnline() || Bukkit.getPlayer(p.getUniqueId()) == null) {
                             Bukkit.broadcastMessage("§c ");
-                            Bukkit.broadcastMessage("§dMultiBrain §8| §cLe joueur " + TeamsManager.getTeam(p.getUniqueId()).getPrefix() + " " + p.getName() + " §ca été éliminé.");
+                            Bukkit.broadcastMessage("§6[MultiBrain] §cLe joueur " + TeamsManager.getTeam(p.getUniqueId()).getPrefix() + " " + p.getName() + " §ca été éliminé.");
                             Bukkit.broadcastMessage("§c ");
                             playerLeft.remove(p.getUniqueId());
                         }

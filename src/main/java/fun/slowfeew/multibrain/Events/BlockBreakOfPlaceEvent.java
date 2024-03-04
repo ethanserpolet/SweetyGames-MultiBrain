@@ -40,13 +40,13 @@ public class BlockBreakOfPlaceEvent implements Listener {
 
         if(e.getBlockPlaced().getLocation().getBlockY() >= 20 || e.getBlockPlaced().getLocation().getBlockY() <= 9) {
             e.setCancelled(true);
-            e.getPlayer().sendMessage("§dMultiBrain §8| §cVous ne pouvez pas placer de blocs à cette hauteur !");
+            e.getPlayer().sendMessage("§6[MultiBrain] §cVous ne pouvez pas placer de blocs à cette hauteur !");
             return;
         }
 
         if(CommandDebug.debug.containsKey(p)) {
                 Location placed = e.getBlockPlaced().getLocation();
-                p.sendMessage("§dMultiBrain §8| §cVous avez placé un bloc ! §8(§7" + placed.toString() + "§8)");
+                p.sendMessage("§6[MultiBrain] §cVous avez placé un bloc ! §8(§7" + placed.toString() + "§8)");
         }
 
         ResetPlacedBlocks.addBlockLocation(e.getBlockPlaced().getLocation());

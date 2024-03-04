@@ -7,10 +7,10 @@ import fun.slowfeew.multibrain.Game.Manager.TeamsManager;
 import fun.slowfeew.multibrain.Game.Runnables.LobbyRunnable;
 import fun.slowfeew.multibrain.Game.Tablist;
 import fun.slowfeew.multibrain.Main;
-import fun.slowfeew.multibrain.SQL.ModPlayer;
 import fun.slowfeew.multibrain.Utils.ItemBuilder;
-import fun.slowfeew.multibrain.Utils.LuckPermsAPI;
 import fun.slowfeew.multibrain.WorldManager.SetSpawns;
+import fun.slowfeew.proxy.FunAPI;
+import fun.slowfeew.spigot.Utils.SpigotPermissionManager;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -19,7 +19,6 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.potion.PotionEffect;
@@ -40,9 +39,12 @@ public class PlayerJoinEvent implements Listener {
 
     @EventHandler
     public void onLog(PlayerLoginEvent e) {
+        if(FunAPI.getIfPlayerIsMod(e.getPlayer().getName())) {
+            Main.IS_MOD.add(e.getPlayer());
+        }
         if (ServerStatus.getStatus().equals(ServerStatus.WAITING)) {
             if(PlayerStatus.isFull(PlayerStatus.INSPAWN)) {
-                if(!ModPlayer.getModPlayer(e.getPlayer())) {
+                if(!FunAPI.getIfPlayerIsMod(e.getPlayer().getName())) {
                     e.getPlayer().kickPlayer("§cLa partie est en cours de démarrage, veuillez patienter.");
                     return;
                 }
@@ -55,7 +57,9 @@ public class PlayerJoinEvent implements Listener {
     public void joinEvent(org.bukkit.event.player.PlayerJoinEvent e) {
         Player p = e.getPlayer();
 
-        if (ModPlayer.getModPlayer(p)) {
+        Main.PLAYER_PREFIX.put(e.getPlayer(), SpigotPermissionManager.getPrefix(e.getPlayer().getUniqueId().toString()));
+
+        if (Main.IS_MOD.contains(e.getPlayer())) {
             e.setJoinMessage(null);
 
             joinMod(p);
@@ -69,10 +73,10 @@ public class PlayerJoinEvent implements Listener {
             e.setJoinMessage(config.getString("JoinMessage")
                     .replace("&", "§")
                     .replace("%player%", p.getName())
-                    .replace("%prefix%", String.valueOf(Objects.requireNonNull(LuckPermsAPI.getPrefix(p))))
+                    .replace("%prefix%", String.valueOf(Objects.requireNonNull(Main.PLAYER_PREFIX.get(e.getPlayer()))))
                     .replace("%online%", String.valueOf(Bukkit.getServer().getOnlinePlayers().size()))
-                    .replace("%max%", Main.maxPlayer)
-            );
+                    .replace("%max%", Main.maxPlayer
+            ));
             goLobby(p);
 
             if((PlayerStatus.isFull(PlayerStatus.INSPAWN)) && (!LobbyRunnable.start)) {
@@ -90,7 +94,7 @@ public class PlayerJoinEvent implements Listener {
                     break;
 
                 case IN_GAME:
-                    if (!ModPlayer.getModPlayer(p) || TeamsManager.getTeam(p.getUniqueId()) == null) {
+                    if (!Main.IS_MOD.contains(e.getPlayer()) || TeamsManager.getTeam(p.getUniqueId()) == null) {
                         p.kickPlayer("§cLa partie est en cours, veuillez patienter.");
                         return;
                     }
@@ -98,7 +102,7 @@ public class PlayerJoinEvent implements Listener {
                     if (TeamsManager.getTeam(p.getUniqueId()) != null && PlayerLeaveEvent.playerLeft.contains(p.getUniqueId())) {
 
                         p.sendMessage("§d ");
-                        p.sendMessage("§dMultiBrain §8» §7Vous avez été réintégré dans la partie.");
+                        p.sendMessage("§6[MultiBrain] §fVous avez été réintégré dans la partie.");
                         p.sendMessage("§e ");
 
                         PlayerManager.doRespawn(p);

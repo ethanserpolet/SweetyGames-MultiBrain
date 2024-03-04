@@ -3,7 +3,6 @@ package fun.slowfeew.multibrain.Game;
 import fun.slowfeew.multibrain.Game.Manager.TeamsManager;
 import fun.slowfeew.multibrain.Main;
 import fun.slowfeew.multibrain.Utils.ItemBuilder;
-import fun.slowfeew.multibrain.Utils.LuckPermsAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
@@ -70,7 +69,7 @@ public class LobbyTeamSelector {
 
             if (players.size() == 1) {
                 UUID player = players.get(0);  // get first player instead of the second
-                lore = "§f- " + LuckPermsAPI.getPrefix(Bukkit.getPlayer(players.toString())) + Bukkit.getPlayer(players.toString()).getName();
+                lore = "§f- " + Main.PLAYER_PREFIX.get(Bukkit.getPlayer(players.toString())) + Bukkit.getPlayer(players.toString()).getName();
             }
         }
 

@@ -54,11 +54,11 @@ public class LobbyRunnable extends BukkitRunnable {
             }
 
             if(secondsleft == 10 || secondsleft == 5 || secondsleft == 4 || secondsleft == 3 || secondsleft == 2 || secondsleft == 1) {
-                Bukkit.broadcastMessage("§dMultiBrain §8| §7Début de la partie dans §e" + secondsleft + " §7seconde(s)");
+                Bukkit.broadcastMessage("§6[MultiBrain] §fDébut de la partie dans §b" + secondsleft + " §fseconde(s).");
                 //send title
 
                 for(Player p : Bukkit.getOnlinePlayers()) {
-                    p.sendTitle("", "§aLa partie commence dans §e" + secondsleft + " §aseconde(s)");
+                    p.sendTitle("", "§fLa partie commence dans §b" + secondsleft + " §aseconde(s)");
                     p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BASS, 10, 1);
                 }
             }

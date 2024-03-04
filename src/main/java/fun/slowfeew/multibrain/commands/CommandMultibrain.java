@@ -50,7 +50,7 @@ public class CommandMultibrain implements CommandExecutor {
                                     CommandDebug.debugSend("T5 = strings[1]", strings[1]);
                                     Config.setLocation(p.getLocation(), "Teams.Base." + strings[1] + ".Spawn");
 
-                                    commandSender.sendMessage("§dMultiBrain §8| §aLe spawn de l'équipe " + strings[1] + " a été défini !");
+                                    commandSender.sendMessage("§6[MultiBrain] §aLe spawn de l'équipe " + strings[1] + " a été défini !");
 
 
                                     return true;
@@ -80,7 +80,7 @@ public class CommandMultibrain implements CommandExecutor {
                         CommandDebug.debugSend("T5 = strings[1]", strings[1]);
                         Config.setLocation(p.getLocation(), "Teams.Base." + strings[1] + ".Bed");
 
-                        commandSender.sendMessage("§dMultiBrain §8| §aLe lit de l'équipe " + strings[1] + " a été défini !");
+                        commandSender.sendMessage("§6[MultiBrain] §aLe lit de l'équipe " + strings[1] + " a été défini !");
 
 
                         return true;

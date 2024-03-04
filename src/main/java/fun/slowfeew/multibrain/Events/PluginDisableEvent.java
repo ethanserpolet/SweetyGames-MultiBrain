@@ -32,7 +32,7 @@ public class PluginDisableEvent implements Listener {
             for (Player player : Bukkit.getOnlinePlayers()) {
                 ByteArrayDataOutput byteArrayDataOutput = ByteStreams.newDataOutput();
                 byteArrayDataOutput.writeUTF("Connect");
-                byteArrayDataOutput.writeUTF("Lobby-01");
+                byteArrayDataOutput.writeUTF("lobby_01");
                 player.sendPluginMessage(Main.getInstance, "BungeeCord", byteArrayDataOutput.toByteArray());
             }
         }
