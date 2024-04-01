@@ -2,9 +2,12 @@ package fun.slowfeew.multibrain.Events;
 
 import fun.slowfeew.multibrain.Game.Enum.PlayerStatus;
 import fun.slowfeew.multibrain.Game.Enum.ServerStatus;
+import fun.slowfeew.multibrain.Game.Manager.ItemsManager;
 import fun.slowfeew.multibrain.Game.Manager.PlayerManager;
+import fun.slowfeew.multibrain.Game.Manager.TeamsManager;
 import fun.slowfeew.multibrain.Main;
 import net.minecraft.server.v1_9_R2.PacketPlayOutGameStateChange;
+import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_9_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,9 +16,12 @@ import org.bukkit.event.entity.EntityDamageByBlockEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
+
+import java.util.Objects;
 
 public class DamageEvent implements Listener {
 
@@ -86,23 +92,28 @@ public class DamageEvent implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
         event.setDeathMessage(null); // Disable death messages if desired
-
-        event.getDrops().clear();
-        event.getEntity().getInventory().clear();
-        // Cancel the default respawn screen
         Player p = event.getEntity();
-        this.death(p);
-    }
+        event.getDrops().clear();
 
-    private void death(final Player player) {
         new BukkitRunnable(){
 
             public void run() {
-                player.spigot().respawn();
-                PlayerManager.doRespawn(player);
-                this.cancel();
+
+                p.spigot().respawn();
+                ItemsManager.giveItem(p);
             }
-        }.runTaskLater(Main.getInstance, 0L);
+        }.runTaskLater(Main.getInstance, 1L);
+
     }
 
+    @EventHandler
+    public void onRespawn(PlayerRespawnEvent e) {
+        Player p = e.getPlayer();
+
+        ItemsManager.giveItem(p);
+        Location loc = TeamsManager.getSpawn(Objects.requireNonNull(TeamsManager.getTeam(p.getUniqueId())));
+
+        p.teleport(loc);
+
+    }
 }

@@ -98,17 +98,6 @@ public class PlayerJoinEvent implements Listener {
                         p.kickPlayer("§6[MultiBrain] §cLa partie est en cours, veuillez patienter.");
                         return;
                     }
-
-                    if (TeamsManager.getTeam(p.getUniqueId()) != null && PlayerLeaveEvent.playerLeft.contains(p.getUniqueId())) {
-
-                        p.sendMessage("§d ");
-                        p.sendMessage("§6[MultiBrain] §aVous avez été réintégré dans la partie.");
-                        p.sendMessage("§e ");
-
-                        PlayerManager.doRespawn(p);
-                        Tablist.updateTablist(p);
-                    }
-                    return;
             }
         }
     }

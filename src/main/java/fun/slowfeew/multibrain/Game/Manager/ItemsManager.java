@@ -60,28 +60,28 @@ public class ItemsManager {
             ItemStack helmet = (new ItemBuilder(Material.LEATHER_HELMET))
                     .setDisplayName("§bCasque Légendaire")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
             ItemStack chestplate = (new ItemBuilder(Material.LEATHER_CHESTPLATE))
                     .setDisplayName("§bPlastron Légendaire")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
             ItemStack leggings = (new ItemBuilder(Material.LEATHER_LEGGINGS))
                     .setDisplayName("§bJambières Légendaires")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
             ItemStack boots = (new ItemBuilder(Material.LEATHER_BOOTS))
                     .setDisplayName("§bBottes Légendaires")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
@@ -99,28 +99,28 @@ public class ItemsManager {
             ItemStack helmet = (new ItemBuilder(Material.LEATHER_HELMET))
                     .setDisplayName("§bCasque Légendaire")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
             ItemStack chestplate = (new ItemBuilder(Material.LEATHER_CHESTPLATE))
                     .setDisplayName("§bPlastron Légendaire")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
             ItemStack leggings = (new ItemBuilder(Material.LEATHER_LEGGINGS))
                     .setDisplayName("§bJambières Légendaires")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
             ItemStack boots = (new ItemBuilder(Material.LEATHER_BOOTS))
                     .setDisplayName("§bBottes Légendaires")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
@@ -138,28 +138,28 @@ public class ItemsManager {
             ItemStack helmet = (new ItemBuilder(Material.LEATHER_HELMET))
                     .setDisplayName("§bCasque Légendaire")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
             ItemStack chestplate = (new ItemBuilder(Material.LEATHER_CHESTPLATE))
                     .setDisplayName("§bPlastron Légendaire")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
             ItemStack leggings = (new ItemBuilder(Material.LEATHER_LEGGINGS))
                     .setDisplayName("§bJambières Légendaires")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
             ItemStack boots = (new ItemBuilder(Material.LEATHER_BOOTS))
                     .setDisplayName("§bBottes Légendaires")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
@@ -177,28 +177,28 @@ public class ItemsManager {
             ItemStack helmet = (new ItemBuilder(Material.LEATHER_HELMET))
                     .setDisplayName("§bCasque Légendaire")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
             ItemStack chestplate = (new ItemBuilder(Material.LEATHER_CHESTPLATE))
                     .setDisplayName("§bPlastron Légendaire")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
             ItemStack leggings = (new ItemBuilder(Material.LEATHER_LEGGINGS))
                     .setDisplayName("§bJambières Légendaires")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
             ItemStack boots = (new ItemBuilder(Material.LEATHER_BOOTS))
                     .setDisplayName("§bBottes Légendaires")
                     .setLeatherArmorColor(blueColor)
-                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3)
+                    .addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1)
                     .addEnchant(Enchantment.DURABILITY, 10)
                     .build();
 
@@ -225,7 +225,7 @@ public class ItemsManager {
         player.getInventory().setItem(1, (new ItemBuilder(Material.IRON_PICKAXE, 1)).setInfinityDurability().setDisplayName("§bPioche des mineurs d'Or").addUnsafeEnchantment(Enchantment.DURABILITY, 10).addEnchant(Enchantment.DIG_SPEED, 3).flag(ItemFlag.HIDE_UNBREAKABLE).flag(ItemFlag.HIDE_ATTRIBUTES).build());
         player.getInventory().setItem(2, (new ItemBuilder(Material.GOLDEN_APPLE, 64)).setInfinityDurability().setDisplayName("§bFruit Interdit").flag(ItemFlag.HIDE_UNBREAKABLE).flag(ItemFlag.HIDE_ATTRIBUTES).build());
         for (int i = 3; i < 36 ; i++) {
-            player.getInventory().setItem(i, (new ItemBuilder(Material.SANDSTONE, 64 * -1)).setInfinityDurability().setDisplayName("Seigneur des bâtisseur").flag(ItemFlag.HIDE_UNBREAKABLE).flag(ItemFlag.HIDE_ATTRIBUTES).build());
+            player.getInventory().setItem(i, (new ItemBuilder(Material.SANDSTONE, 64)).setInfinityDurability().setDisplayName("§bSeigneur des bâtisseur").flag(ItemFlag.HIDE_UNBREAKABLE).flag(ItemFlag.HIDE_ATTRIBUTES).build());
         }
     }
 }

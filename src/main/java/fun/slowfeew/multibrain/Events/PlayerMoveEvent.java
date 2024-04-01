@@ -33,6 +33,7 @@ public class PlayerMoveEvent implements Listener {
         Player player = event.getPlayer();
         // Check if you want to prevent jumping for this specific player
         if (StartRound.Duration.get(event.getPlayer()) <= 0) {
+
             event.setCancelled(true);
             player.setAllowFlight(false);
             player.setFlying(false);

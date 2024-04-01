@@ -1,11 +1,11 @@
-name: FunKraftMultiBrain
+name: FunMultiBrain
 author: SlowFeew
 version: 1.0
 main: fun.slowfeew.multibrain.Main
 load: STARTUP
 depend:
   - ProtocolLib
-  - FunKraftCore
+  - FunCore
 commands:
   setspawn:
     permission: op
