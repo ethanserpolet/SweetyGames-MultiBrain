@@ -1,5 +1,8 @@
 package fun.slowfeew.multibrain.Events;
 
+import fun.slowfeew.api.FunPlayer.FunPlayerManager;
+import fun.slowfeew.api.FunPlayer.FunPlayerMethods;
+import fun.slowfeew.api.FunPlayer.SpigotFunPlayerManager;
 import fun.slowfeew.multibrain.Game.Enum.PlayerStatus;
 import fun.slowfeew.multibrain.Game.Enum.ServerStatus;
 import fun.slowfeew.multibrain.Game.Manager.PlayerManager;
@@ -9,8 +12,6 @@ import fun.slowfeew.multibrain.Game.Tablist;
 import fun.slowfeew.multibrain.Main;
 import fun.slowfeew.multibrain.Utils.ItemBuilder;
 import fun.slowfeew.multibrain.WorldManager.SetSpawns;
-import fun.slowfeew.proxy.FunAPI;
-import fun.slowfeew.spigot.Utils.SpigotPermissionManager;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -39,12 +40,12 @@ public class PlayerJoinEvent implements Listener {
 
     @EventHandler
     public void onLog(PlayerLoginEvent e) {
-        if(FunAPI.getIfPlayerIsMod(e.getPlayer().getUniqueId().toString())) {
+        if(SpigotFunPlayerManager.get().getPlayerByID(e.getPlayer().getUniqueId().toString()).getModeratorMod()) {
             Main.IS_MOD.add(e.getPlayer());
         }
         if (ServerStatus.getStatus().equals(ServerStatus.WAITING)) {
             if(PlayerStatus.isFull(PlayerStatus.INSPAWN)) {
-                if(!FunAPI.getIfPlayerIsMod(e.getPlayer().getName())) {
+                if(!SpigotFunPlayerManager.get().getPlayerByID(e.getPlayer().getUniqueId().toString()).getModeratorMod()) {
                     e.getPlayer().kickPlayer("§cLa partie est en cours de démarrage, veuillez patienter.");
                     return;
                 }
@@ -57,7 +58,7 @@ public class PlayerJoinEvent implements Listener {
     public void joinEvent(org.bukkit.event.player.PlayerJoinEvent e) {
         Player p = e.getPlayer();
 
-        Main.PLAYER_PREFIX.put(e.getPlayer(), SpigotPermissionManager.getPrefix(e.getPlayer().getUniqueId().toString()));
+        Main.PLAYER_PREFIX.put(e.getPlayer(), SpigotFunPlayerManager.get().getPrefixByUUID(e.getPlayer().getUniqueId().toString()));
 
         if (Main.IS_MOD.contains(e.getPlayer())) {
             e.setJoinMessage(null);

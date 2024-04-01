@@ -190,7 +190,7 @@
         <azclientapi.path>${project.basedir}/libs/AZClientAPI-1.9.4.jar</azclientapi.path>
         <spigotmc.path>${project.basedir}/libs/craftbukkit-1.9.4.jar</spigotmc.path>
         <bossbarapi.path>${project.basedir}/libs/BossBarAPI.jar</bossbarapi.path>
-        <funcore.path>C:\Users\Slow\IdeaProjects\FunKraftReloaded\FunKraftReloaded\target\FunCore-1.0-SNAPSHOT.jar</funcore.path>
+        <funcore.path>C:\Users\Slow\IdeaProjects\FunCore\FunCore\target\FunCore-1.0-SNAPSHOT.jar</funcore.path>
 
 
     </properties>
