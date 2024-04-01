@@ -2,8 +2,7 @@ package fun.slowfeew.multibrain.Events;
 
 import fun.slowfeew.multibrain.Game.Enum.PlayerStatus;
 import fun.slowfeew.multibrain.Main;
-import fun.slowfeew.multibrain.WorldManager.ResetBrokenBlocks;
-import fun.slowfeew.multibrain.WorldManager.ResetPlacedBlocks;
+import fun.slowfeew.multibrain.WorldManager.PlayerBlocksManager;
 import fun.slowfeew.multibrain.commands.CommandDebug;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -49,7 +48,7 @@ public class BlockBreakOfPlaceEvent implements Listener {
                 p.sendMessage("§6[MultiBrain] §cVous avez placé un bloc ! §8(§7" + placed.toString() + "§8)");
         }
 
-        ResetPlacedBlocks.addBlockLocation(e.getBlockPlaced().getLocation());
+        PlayerBlocksManager.addPlacedBlock(e.getBlockPlaced().getLocation());
 
     }
 
@@ -68,11 +67,12 @@ public class BlockBreakOfPlaceEvent implements Listener {
 
         if(block != null && !block.getType().equals(Material.SANDSTONE)) {
             e.setCancelled(true);
+            return;
         }
 
 
         assert e.getBlock() != null;
-        ResetBrokenBlocks.addBlockLocation(e.getBlock().getLocation());
+        PlayerBlocksManager.addBrokenBlock(e.getBlock().getLocation());
 
     }
 }

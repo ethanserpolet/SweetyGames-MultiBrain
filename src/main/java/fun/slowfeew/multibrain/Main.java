@@ -3,7 +3,6 @@ package fun.slowfeew.multibrain;
 import fun.slowfeew.multibrain.Game.Enum.ServerStatus;
 import fun.slowfeew.multibrain.Game.Manager.ServerManager;
 import fun.slowfeew.multibrain.WorldManager.RegisterCommandAndEvents;
-import fun.slowfeew.multibrain.WorldManager.ResetPlacedBlocks;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
@@ -60,8 +59,6 @@ public class Main extends JavaPlugin {
 
         saveDefaultConfig();
         config = getConfig();
-
-        ResetPlacedBlocks.blockLocation = new ArrayList<>();
 
         serverManager = new ServerManager();
 

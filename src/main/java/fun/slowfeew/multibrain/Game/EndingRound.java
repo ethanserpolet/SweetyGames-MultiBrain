@@ -3,8 +3,7 @@ package fun.slowfeew.multibrain.Game;
 import fun.slowfeew.multibrain.Game.Enum.PlayerStatus;
 import fun.slowfeew.multibrain.Game.Manager.TeamsManager;
 import fun.slowfeew.multibrain.Main;
-import fun.slowfeew.multibrain.WorldManager.ResetBrokenBlocks;
-import fun.slowfeew.multibrain.WorldManager.ResetPlacedBlocks;
+import fun.slowfeew.multibrain.WorldManager.PlayerBlocksManager;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
@@ -28,8 +27,7 @@ public class EndingRound {
 
             announceWinnerEliminated(winner, loser);
 
-            ResetPlacedBlocks.ResetMap();
-            ResetBrokenBlocks.ResetMap();
+            PlayerBlocksManager.resetMap();
 
             StartRound.round++;
 
@@ -55,8 +53,7 @@ public class EndingRound {
         }
 
         announceWinner(winner, loser);
-        ResetPlacedBlocks.ResetMap();
-        ResetBrokenBlocks.ResetMap();
+        PlayerBlocksManager.resetMap();
         StartRound.round++;
 
 
